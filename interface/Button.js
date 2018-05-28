@@ -1,8 +1,9 @@
-function Button(x, y, w, h) {
+function Button(x, y, w, h, message) {
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h;
+  this.message = message;
 
   this.show = function() {
     this.showRect();
@@ -39,7 +40,7 @@ function Button(x, y, w, h) {
   this.showText = function() {
     textSize(50);
     fill(0)
-    text("TEST", this.x - this.w / 2, y);
+    text(this.message, this.x - this.w / 2, y);
   }
 
 }

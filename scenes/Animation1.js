@@ -2,7 +2,7 @@ function Animation1() {
   this.buttons = [];
 
   this.enter = function() {
-    let button = new Button(width / 2, height / 2, 200, 200);
+    let button = new Button(width / 2, height / 2, 200, 200, "Test");
     this.buttons.push(button);
   }
 
