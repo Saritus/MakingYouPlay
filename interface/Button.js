@@ -6,6 +6,14 @@ function Button(x, y, w, h) {
 
   this.show = function() {
 
+    // set up the font
+    textFont(font);
+    textSize(fontsize);
+    fill(0)
+    text(message, x, y);
+
+
+
     scribble.scribbleRect(this.x, this.y, this.w, this.h);
     // calculate the x and y coordinates for the border points of the hachure
     var xleft = this.x - this.w / 2 + 5;
