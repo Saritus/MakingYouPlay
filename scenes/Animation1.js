@@ -2,7 +2,10 @@ function Animation1() {
   var textX;
   var textY;
 
-  this.enter = function() {
+  this.draw = function() {
+
+    randomSeed(0);
+
     background(51);
 
     // an array with some values
