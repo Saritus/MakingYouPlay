@@ -1,57 +1,25 @@
 function Animation1() {
-  var textX;
-  var textY;
+  this.buttons = [];
+
+  this.enter = function() {
+    let button = new Button(width / 2, height / 2, 200, 200);
+    this.buttons.push(button);
+  }
 
   this.draw = function() {
 
     randomSeed(0);
+    scribble.bowing = 0.1;
+    scribble.roughness = 1.5;
 
     background(51);
 
-    // an array with some values
-    var values = [16, 35, 78, 95, 70, 64, 32, 10, -10, -32, -64, -32];
-    // calculate a few sizes
-    var width = (windowWidth * 0.7 * 0.98) / values.length;
-    var spacer = (windowWidth * 0.3 * 0.98) / (values.length + 1);
-    var halfHeight = windowHeight / 2;
-    // create an instance of scribble and set a few parameters
-    scribble.bowing = 0.1;
-    scribble.roughness = 1.5;
-    // draw a horizontal line across the center of the screen
-    scribble.scribbleLine(0, halfHeight, windowWidth, halfHeight);
-
-    // draw every value as a filled rect in a bar graph
-    for (var i = 0; i < values.length; i++) {
-      // calculate the x and y coordinates of the center of the rect and the height
-      var h = halfHeight * 0.01 * values[i];
-      var x = (spacer + width) * (i + 1) - (width / 2);
-      var y = halfHeight - h / 2;
-      // draw a rect for the value
-      scribble.scribbleRect(x, y, width, h);
-      // calculate the x and y coordinates for the border points of the hachure
-      var xleft = x - width / 2 + 5;
-      var xright = x + width / 2 - 5;
-      var ytop = y - (halfHeight * 0.01 * values[i] / 2);
-      var ybottom = y + (halfHeight * 0.01 * values[i] / 2);
-      // reduce the sizes to fit in the rect
-      if (ytop > ybottom) {
-        ytop -= 5;
-        ybottom += 5;
-      } else {
-        ytop += 5;
-        ybottom -= 5;
-      }
-      // the x coordinates of the border points of the hachure
-      var xCoords = [xleft, xright, xright, xleft];
-      // the y coordinates of the border points of the hachure
-      var yCoords = [ytop, ytop, ybottom, ybottom];
-      // the gap between two hachure lines
-      var gap = 5;
-      // the angle of the hachure in degrees
-      var angle = 315;
-      // fill the rect with a hachure
-      scribble.scribbleFilling(xCoords, yCoords, gap, angle);
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].show()
     }
+
+
+
   }
 
   this.keyPressed = function() {
