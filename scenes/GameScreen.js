@@ -1,4 +1,4 @@
-function Animation2() {
+function GameScreen() {
   this.y = 0;
 
   this.draw = function() {

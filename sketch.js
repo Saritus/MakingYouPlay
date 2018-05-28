@@ -14,7 +14,7 @@ function setup() {
   mgr = new SceneManager();
 
   mgr.addScene(StartScreen);
-  mgr.addScene(Animation2);
+  mgr.addScene(GameScreen);
   mgr.addScene(Animation3);
 
   mgr.showNextScene();

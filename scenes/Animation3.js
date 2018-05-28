@@ -4,7 +4,7 @@ function Animation3() {
 
 Animation3.prototype.setup = function() {
   // access a different scene using the SceneManager
-  oAnim1 = this.sceneManager.findScene(Animation2);
+  oAnim1 = this.sceneManager.findScene(GameScreen);
 }
 
 Animation3.prototype.draw = function() {

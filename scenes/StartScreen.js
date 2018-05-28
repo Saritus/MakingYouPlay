@@ -2,7 +2,7 @@ function StartScreen() {
   this.buttons = [];
 
   this.enter = function() {
-    let buttonGame = new Button(width / 2, height / 2 - 150, 250, 100, "Play", Animation2);
+    let buttonGame = new Button(width / 2, height / 2 - 150, 250, 100, "Play", GameScreen);
     this.buttons.push(buttonGame);
     let buttonSettings = new Button(width / 2, height / 2, 250, 100, "Settings", Animation3);
     this.buttons.push(buttonSettings);
