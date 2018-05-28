@@ -46,4 +46,15 @@ function Button(x, y, w, h, message) {
     text(this.message, this.x - this.w / 2 + 10, y);
   }
 
+  this.checkClick = function() {
+    var xleft = this.x - this.w / 2 + 5;
+    var xright = this.x + this.w / 2 - 5;
+    var ytop = this.y - this.h / 2 + 5;
+    var ybottom = this.y + this.h / 2 - 5;
+
+    if (mouseX > xleft && mouseX < xright && mouseY > ytop && mouseY < ybottom) {
+      console.log(this.message);
+    }
+  }
+
 }

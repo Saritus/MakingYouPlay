@@ -31,6 +31,8 @@ function StartScreen() {
   }
 
   this.mousePressed = function() {
-    // this.sceneManager.showNextScene();
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].checkClick()
+    }
   }
 }
