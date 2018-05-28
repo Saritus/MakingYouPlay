@@ -13,7 +13,7 @@ function setup() {
 
   mgr = new SceneManager();
 
-  mgr.addScene(Animation1);
+  mgr.addScene(StartScreen);
   mgr.addScene(Animation2);
   mgr.addScene(Animation3);
 
@@ -32,7 +32,7 @@ function keyPressed() {
   // You can optionaly handle the key press at global level...
   switch (key) {
     case '1':
-      mgr.showScene(Animation1);
+      mgr.showScene(StartScreen);
       break;
     case '2':
       mgr.showScene(Animation2);

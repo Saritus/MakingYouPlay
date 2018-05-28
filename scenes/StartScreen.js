@@ -1,4 +1,4 @@
-function Animation1() {
+function StartScreen() {
   this.buttons = [];
 
   this.enter = function() {
