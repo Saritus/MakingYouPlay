@@ -2,9 +2,13 @@ function GameScreen() {
   this.buttons = [];
 
   this.setup = function() {
-    let buttonBack = new Button(150, 100, 200, 100, "Back", StartScreen);
+    let buttonBack = new Button(150, 100, 200, 100, "Back", function() {
+      mgr.showScene(StartScreen);
+    });
     this.buttons.push(buttonBack);
-    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", Animation3);
+    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", function() {
+      mgr.showScene(Animation3);
+    });
     this.buttons.push(buttonNext);
   }
 

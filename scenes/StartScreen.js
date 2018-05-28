@@ -2,11 +2,17 @@ function StartScreen() {
   this.buttons = [];
 
   this.setup = function() {
-    let buttonGame = new Button(width / 2, height / 2 - 150, 250, 100, "Play", GameScreen);
+    let buttonGame = new Button(width / 2, height / 2 - 150, 250, 100, "Play", function() {
+      mgr.showScene(GameScreen);
+    });
     this.buttons.push(buttonGame);
-    let buttonSettings = new Button(width / 2, height / 2, 250, 100, "Settings", Animation3);
+    let buttonSettings = new Button(width / 2, height / 2, 250, 100, "Settings", function() {
+      mgr.showScene(Animation3);
+    });
     this.buttons.push(buttonSettings);
-    let buttonCredits = new Button(width / 2, height / 2 + 150, 250, 100, "Credits", Animation3);
+    let buttonCredits = new Button(width / 2, height / 2 + 150, 250, 100, "Credits", function() {
+      mgr.showScene(Animation3);
+    });
     this.buttons.push(buttonCredits);
   }
 

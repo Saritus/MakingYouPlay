@@ -1,10 +1,10 @@
-function Button(x, y, w, h, message, target) {
+function Button(x, y, w, h, message, func) {
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h;
   this.message = message;
-  this.target = target
+  this.func = func
 
   this.show = function() {
     this.showRect(0);
@@ -54,7 +54,7 @@ function Button(x, y, w, h, message, target) {
     var ybottom = this.y + this.h / 2 - 5;
 
     if (mouseX > xleft && mouseX < xright && mouseY > ytop && mouseY < ybottom) {
-      mgr.showScene(target);
+      func();
     }
   }
 
