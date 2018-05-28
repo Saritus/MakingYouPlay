@@ -28,24 +28,6 @@ function mousePressed() {
   mgr.mousePressed();
 }
 
-function keyPressed() {
-  // You can optionaly handle the key press at global level...
-  switch (key) {
-    case '1':
-      mgr.showScene(StartScreen);
-      break;
-    case '2':
-      mgr.showScene(Animation2);
-      break;
-    case '3':
-      mgr.showScene(Animation3);
-      break;
-  }
-
-  // ... then dispatch via the SceneManager.
-  mgr.keyPressed();
-}
-
 window.onresize = function() {
   canvas.size(windowWidth, windowHeight);
 };
