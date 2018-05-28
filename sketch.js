@@ -2,14 +2,8 @@ var mgr;
 var canvas;
 var scribble;
 
-var message = "tickle",
-  font,
-  bounds, // holds x, y, w, h of the text's bounding box
-  fontsize = 60,
-  x, y; // x and y coordinates of the text
-
 function preload() {
-  font = loadFont('font/HandScribbleSketchTimes.otf');
+  // font = loadFont('font/HandScribbleSketchTimes.otf');
 }
 
 function setup() {

@@ -23,7 +23,7 @@ function Animation1() {
   }
 
   this.keyPressed = function() {
-    text(keyCode, textX, textY += 10);
+    //text(keyCode, textX, textY += 10);
   }
 
   this.mousePressed = function() {

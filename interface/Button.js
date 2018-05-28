@@ -5,16 +5,16 @@ function Button(x, y, w, h) {
   this.h = h;
 
   this.show = function() {
+    this.showRect();
+    this.showFill();
+    this.showText();
+  }
 
-    // set up the font
-    textFont(font);
-    textSize(fontsize);
-    fill(0)
-    text(message, x, y);
-
-
-
+  this.showRect = function() {
     scribble.scribbleRect(this.x, this.y, this.w, this.h);
+  }
+
+  this.showFill = function() {
     // calculate the x and y coordinates for the border points of the hachure
     var xleft = this.x - this.w / 2 + 5;
     var xright = this.x + this.w / 2 - 5;
@@ -35,4 +35,11 @@ function Button(x, y, w, h) {
       scribble.scribbleFilling(xCoords, yCoords, gap, angle);
     }
   }
+
+  this.showText = function() {
+    textSize(50);
+    fill(0)
+    text("TEST", this.x - this.w / 2, y);
+  }
+
 }
