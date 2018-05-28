@@ -21,13 +21,6 @@ function StartScreen() {
     for (var i = 0; i < this.buttons.length; i++) {
       this.buttons[i].show()
     }
-
-
-
-  }
-
-  this.keyPressed = function() {
-    //text(keyCode, textX, textY += 10);
   }
 
   this.mousePressed = function() {
