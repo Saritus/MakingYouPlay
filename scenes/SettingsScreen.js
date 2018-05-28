@@ -1,13 +1,13 @@
-function Animation3() {
+function SettingsScreen() {
   this.oAnim1 = null;
 }
 
-Animation3.prototype.setup = function() {
+SettingsScreen.prototype.setup = function() {
   // access a different scene using the SceneManager
   oAnim1 = this.sceneManager.findScene(GameScreen);
 }
 
-Animation3.prototype.draw = function() {
+SettingsScreen.prototype.draw = function() {
   background("lightblue");
 
   var r = sin(frameCount * 0.01);
@@ -22,6 +22,6 @@ Animation3.prototype.draw = function() {
   }
 }
 
-Animation3.prototype.mousePressed = function() {
+SettingsScreen.prototype.mousePressed = function() {
   // this.sceneManager.showNextScene();
 }

@@ -7,11 +7,11 @@ function StartScreen() {
     });
     this.buttons.push(buttonGame);
     let buttonSettings = new Button(width / 2, height / 2, 250, 100, "Settings", function() {
-      mgr.showScene(Animation3);
+      mgr.showScene(SettingsScreen);
     });
     this.buttons.push(buttonSettings);
     let buttonCredits = new Button(width / 2, height / 2 + 150, 250, 100, "Credits", function() {
-      mgr.showScene(Animation3);
+      mgr.showScene(SettingsScreen);
     });
     this.buttons.push(buttonCredits);
   }

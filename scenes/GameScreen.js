@@ -7,7 +7,7 @@ function GameScreen() {
     });
     this.buttons.push(buttonBack);
     let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", function() {
-      mgr.showScene(Animation3);
+      mgr.showScene(SettingsScreen);
     });
     this.buttons.push(buttonNext);
   }
