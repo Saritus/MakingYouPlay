@@ -6,16 +6,18 @@ function Button(x, y, w, h, message) {
   this.message = message;
 
   this.show = function() {
-    this.showRect();
-    this.showFill();
-    this.showText();
+    this.showRect(0);
+    this.showFill(30);
+    this.showText(0);
   }
 
-  this.showRect = function() {
+  this.showRect = function(color) {
+    stroke(color);
     scribble.scribbleRect(this.x, this.y, this.w, this.h);
   }
 
-  this.showFill = function() {
+  this.showFill = function(color) {
+    stroke(color);
     // calculate the x and y coordinates for the border points of the hachure
     var xleft = this.x - this.w / 2 + 5;
     var xright = this.x + this.w / 2 - 5;
@@ -37,10 +39,11 @@ function Button(x, y, w, h, message) {
     }
   }
 
-  this.showText = function() {
+  this.showText = function(color) {
+    stroke(color);
     textSize(50);
     fill(0)
-    text(this.message, this.x - this.w / 2, y);
+    text(this.message, this.x - this.w / 2 + 10, y);
   }
 
 }
