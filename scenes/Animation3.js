@@ -23,5 +23,5 @@ Animation3.prototype.draw = function() {
 }
 
 Animation3.prototype.mousePressed = function() {
-  this.sceneManager.showNextScene();
+  // this.sceneManager.showNextScene();
 }

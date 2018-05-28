@@ -60,6 +60,6 @@ function Animation1() {
   }
 
   this.mousePressed = function() {
-    this.sceneManager.showNextScene();
+    // this.sceneManager.showNextScene();
   }
 }
