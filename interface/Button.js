@@ -8,7 +8,7 @@ function Button(x, y, w, h, message, target) {
 
   this.show = function() {
     this.showRect(0);
-    this.showFill(30);
+    this.showFill(51);
     this.showText(0);
   }
 

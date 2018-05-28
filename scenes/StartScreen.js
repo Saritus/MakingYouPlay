@@ -16,7 +16,7 @@ function StartScreen() {
     scribble.bowing = 0.1;
     scribble.roughness = 1.5;
 
-    background(51);
+    background(100);
 
     for (var i = 0; i < this.buttons.length; i++) {
       this.buttons[i].show()
