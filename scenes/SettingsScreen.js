@@ -1,27 +1,29 @@
 function SettingsScreen() {
-  this.oAnim1 = null;
-}
+  this.buttons = [];
 
-SettingsScreen.prototype.setup = function() {
-  // access a different scene using the SceneManager
-  oAnim1 = this.sceneManager.findScene(GameScreen);
-}
-
-SettingsScreen.prototype.draw = function() {
-  background("lightblue");
-
-  var r = sin(frameCount * 0.01);
-
-  fill("white");
-  ellipse(width / 2, height / 2, map(r, 0, 1, 100, 200));
-
-  if (oAnim1 != null) {
-    fill("black");
-    textAlign(LEFT);
-    text("Scene1 y: " + oAnim1.oScene.y, 10, height - 20);
+  this.setup = function() {
+    let buttonBack = new Button(150, 100, 200, 100, "Back", function() {
+      mgr.showScene(StartScreen);
+    });
+    this.buttons.push(buttonBack);
   }
-}
 
-SettingsScreen.prototype.mousePressed = function() {
-  // this.sceneManager.showNextScene();
+  this.draw = function() {
+
+    randomSeed(0);
+    scribble.bowing = 0.1;
+    scribble.roughness = 1.5;
+
+    background(100);
+
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].show()
+    }
+  }
+
+  this.mousePressed = function() {
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].checkClick()
+    }
+  }
 }
