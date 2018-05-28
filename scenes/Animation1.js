@@ -24,10 +24,6 @@ function Animation1() {
 
   this.keyPressed = function() {
     text(keyCode, textX, textY += 10);
-    if (textY > height) {
-      textX += 20;
-      textY = 0;
-    }
   }
 
   this.mousePressed = function() {
