@@ -1,8 +1,11 @@
 var mgr;
 var canvas;
+var scribble;
 
 function setup() {
   canvas = createCanvas(windowWidth - 20, windowHeight - 20);
+
+  scribble = new Scribble();
 
   mgr = new SceneManager();
 
