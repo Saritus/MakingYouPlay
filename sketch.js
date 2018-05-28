@@ -6,8 +6,6 @@ function setup() {
 
   mgr = new SceneManager();
 
-  // Preload scenes. Preloading is normally optional
-  // ... but needed if showNextScene() is used.
   mgr.addScene(Animation1);
   mgr.addScene(Animation2);
   mgr.addScene(Animation3);
@@ -45,19 +43,10 @@ window.onresize = function() {
   canvas.size(windowWidth, windowHeight);
 };
 
-
-// =============================================================
-// =                         BEGIN SCENES                      =
-// =============================================================
-
 function Animation1() {
   var textX;
   var textY;
 
-
-  // enter() will be executed each time the SceneManager switches
-  // to this animation
-  // Note: Animation1() doesn't have setup() or draw()
   this.enter = function() {
     textX = 10;
     textY = 0;
@@ -104,8 +93,6 @@ function Animation2() {
 }
 
 
-// When defining scenes, you can also
-// put the setup, draw, etc. methods on prototype
 function Animation3() {
   this.oAnim1 = null;
 }
