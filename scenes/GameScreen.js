@@ -1,17 +1,29 @@
 function GameScreen() {
-  this.y = 0;
+  this.buttons = [];
+
+  this.setup = function() {
+    let buttonBack = new Button(150, 100, 200, 100, "Back", StartScreen);
+    this.buttons.push(buttonBack);
+    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", Animation3);
+    this.buttons.push(buttonNext);
+  }
 
   this.draw = function() {
-    background("teal");
 
-    line(0, this.y, width, this.y);
-    this.y++;
+    randomSeed(0);
+    scribble.bowing = 0.1;
+    scribble.roughness = 1.5;
 
-    if (this.y > height)
-      this.y = 0;
+    background(100);
+
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].show()
+    }
   }
 
   this.mousePressed = function() {
-    // this.sceneManager.showNextScene();
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].checkClick()
+    }
   }
 }
