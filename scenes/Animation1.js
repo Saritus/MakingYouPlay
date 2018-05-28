@@ -2,8 +2,12 @@ function Animation1() {
   this.buttons = [];
 
   this.enter = function() {
-    let button = new Button(width / 2, height / 2, 200, 200, "Test");
-    this.buttons.push(button);
+    let buttonGame = new Button(width / 2, height / 2 - 150, 250, 100, "Play");
+    this.buttons.push(buttonGame);
+    let buttonSettings = new Button(width / 2, height / 2, 250, 100, "Settings");
+    this.buttons.push(buttonSettings);
+    let buttonCredits = new Button(width / 2, height / 2 + 150, 250, 100, "Credits");
+    this.buttons.push(buttonCredits);
   }
 
   this.draw = function() {
