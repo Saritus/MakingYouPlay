@@ -12,6 +12,10 @@ function GameScreen() {
     this.task = new Task(50, 200, width - 100, height - 400);
   }
 
+  this.enter = function() {
+    this.nextTask();
+  }
+
   this.draw = function() {
 
     randomSeed(0);
@@ -29,7 +33,8 @@ function GameScreen() {
   }
 
   this.nextTask = function() {
-    this.task.message = Math.random();
+    let index = Math.floor((Math.random() * lines.length));
+    this.task.message = lines[index];
   }.bind(this)
 
   this.mousePressed = function() {

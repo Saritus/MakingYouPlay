@@ -3,7 +3,6 @@ function Task(x, y, w, h) {
   this.y = y;
   this.w = w;
   this.h = h;
-  this.message = Math.random();
 
   this.show = function() {
     textAlign("center");
