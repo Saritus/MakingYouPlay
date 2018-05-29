@@ -11,7 +11,7 @@ function StartScreen() {
     });
     this.buttons.push(buttonSettings);
     let buttonCredits = new Button(width / 2, height / 2 + 150, 250, 100, "Credits", function() {
-      mgr.showScene(SettingsScreen);
+      window.open("https://www.youtube.com/watch?v=DLzxrzFCyOs", '_blank');
     });
     this.buttons.push(buttonCredits);
   }
