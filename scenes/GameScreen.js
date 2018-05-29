@@ -6,9 +6,7 @@ function GameScreen() {
       mgr.showScene(StartScreen);
     });
     this.buttons.push(buttonBack);
-    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", function() {
-      mgr.showScene(SettingsScreen);
-    });
+    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", this.nextTask);
     this.buttons.push(buttonNext);
 
     this.task = new Task(50, 200, width - 100, height - 400);
@@ -29,6 +27,10 @@ function GameScreen() {
     this.task.show();
 
   }
+
+  this.nextTask = function() {
+    this.task.message = Math.random();
+  }.bind(this)
 
   this.mousePressed = function() {
     for (var i = 0; i < this.buttons.length; i++) {
