@@ -56,12 +56,18 @@ function SettingsScreen() {
       var reader = new FileReader();
 
       reader.onload = function(e) {
-        var text = reader.result;
-        console.log(text);
-      }
+        lines = reader.result.split('\n');
+        for (var line = 0; line < lines.length; line++) {
+          console.log(lines[line]);
+        }
+        this.input.remove();
+        this.output.remove();
+        mgr.showScene(StartScreen);
+      }.bind(this)
 
       reader.readAsText(f);
     }
-  }
+
+  }.bind(this)
 
 }

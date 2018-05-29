@@ -1,6 +1,7 @@
 var mgr;
 var canvas;
 var scribble;
+var lines = [""];
 
 function preload() {
   // font = loadFont('font/HandScribbleSketchTimes.otf');
