@@ -14,10 +14,6 @@ function SettingsScreen() {
     this.input.name = "files[]";
     document.body.appendChild(this.input);
 
-    // <output id="list"></output>
-    this.output = document.createElement("output");
-    document.body.appendChild(this.output);
-
     // Auf neue Auswahl reagieren und gegebenenfalls Funktion neu ausführen.
     this.input.addEventListener('change', this.fileChange, false);
   }
@@ -43,7 +39,6 @@ function SettingsScreen() {
 
   this.backToStart = function() {
     this.input.remove();
-    this.output.remove();
     mgr.showScene(StartScreen);
   }.bind(this)
 
