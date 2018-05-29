@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth - 20, windowHeight - 20);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   scribble = new Scribble();
 
