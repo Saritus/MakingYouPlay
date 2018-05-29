@@ -2,6 +2,20 @@ function SettingsScreen() {
   this.buttons = [];
 
   this.setup = function() {
+
+    // <input type="file" id="files" name="files[]" multiple />
+    this.input = document.createElement('input');
+    this.input.type = "file";
+    this.input.name = "files[]";
+    document.body.appendChild(this.input);
+
+    // <output id="list"></output>
+    this.output = document.createElement("output");
+    document.body.appendChild(this.output);
+
+    // Auf neue Auswahl reagieren und gegebenenfalls Funktion neu ausführen.
+    this.input.addEventListener('change', this.fileChange, false);
+
     let buttonBack = new Button(150, 100, 200, 100, "Back", function() {
       mgr.showScene(StartScreen);
     });
@@ -26,4 +40,28 @@ function SettingsScreen() {
       this.buttons[i].checkClick();
     }
   }
+
+  this.fileChange = function(evt) {
+    // FileList object
+    var dateien = evt.target.files;
+
+    // Auslesen der gespeicherten Dateien durch Schleife
+    for (var i = 0, f; f = dateien[i]; i++) {
+
+      // nur TXT-Dateien
+      if (!f.type.match('text/plain')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var text = reader.result;
+        console.log(text);
+      }
+
+      reader.readAsText(f);
+    }
+  }
+
 }
