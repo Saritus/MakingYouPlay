@@ -24,7 +24,8 @@ function GameScreen() {
       this.buttons[i].show()
     }
 
-    text("L\u00f6se Aufgabe Nr. 1", 50, height / 2);
+    textAlign("center");
+    text("L\u00f6se Aufgabe Nr. 1", 50, height / 2, width - 100, 500);
   }
 
   this.mousePressed = function() {

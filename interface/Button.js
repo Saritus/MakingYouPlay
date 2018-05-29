@@ -43,8 +43,9 @@ function Button(x, y, w, h, message, func) {
   this.showText = function(color) {
     stroke(color);
     textSize(50);
+    textAlign("center");
     fill(0)
-    text(this.message, this.x - this.w / 2 + 10, y);
+    text(this.message, this.x, this.y);
   }
 
   this.checkClick = function() {
