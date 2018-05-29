@@ -41,6 +41,12 @@ function SettingsScreen() {
     }
   }
 
+  this.backToStart = function() {
+    this.input.remove();
+    this.output.remove();
+    mgr.showScene(StartScreen);
+  }.bind(this)
+
   this.fileChange = function(evt) {
     // FileList object
     var dateien = evt.target.files;
@@ -60,9 +66,7 @@ function SettingsScreen() {
         for (var line = 0; line < lines.length; line++) {
           console.log(lines[line]);
         }
-        this.input.remove();
-        this.output.remove();
-        mgr.showScene(StartScreen);
+        this.backToStart();
       }.bind(this)
 
       reader.readAsText(f);
