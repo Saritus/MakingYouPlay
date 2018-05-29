@@ -1,7 +1,7 @@
 var mgr;
 var canvas;
 var scribble;
-var lines = [""];
+var lines = ["Keine Aufgaben eingetragen"];
 
 function preload() {
   // font = loadFont('font/HandScribbleSketchTimes.otf');
