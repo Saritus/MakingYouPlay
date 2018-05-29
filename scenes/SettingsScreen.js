@@ -27,7 +27,7 @@ function SettingsScreen() {
     scribble.bowing = 0.1;
     scribble.roughness = 1.5;
 
-    background(100);
+    background(tertiary);
 
     for (var i = 0; i < this.buttons.length; i++) {
       this.buttons[i].show()

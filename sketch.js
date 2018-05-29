@@ -3,6 +3,10 @@ var canvas;
 var scribble;
 var lines = ["Keine Aufgaben eingetragen"];
 
+var primary = 0;
+var secondary = 51;
+var tertiary = 100;
+
 function preload() {
   // font = loadFont('font/HandScribbleSketchTimes.otf');
 }
