@@ -7,7 +7,7 @@ function Task(x, y, w, h) {
 
   this.show = function() {
     textAlign("center");
-    text(this.message, 50, 200, width - 100, height - 400);
+    text(this.message, this.x, this.y, this.w, this.h);
   }
 
 }

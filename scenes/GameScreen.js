@@ -11,7 +11,7 @@ function GameScreen() {
     });
     this.buttons.push(buttonNext);
 
-    this.task = new Task();
+    this.task = new Task(50, 200, width - 100, height - 400);
   }
 
   this.draw = function() {
