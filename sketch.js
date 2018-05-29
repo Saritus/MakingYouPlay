@@ -35,6 +35,8 @@ function mousePressed() {
   mgr.mousePressed();
 }
 
+/*
 window.onresize = function() {
   canvas.size(windowWidth, windowHeight);
 };
+*/
