@@ -2,10 +2,12 @@ function GameScreen() {
   this.buttons = [];
 
   this.setup = function() {
+    // Back-Button
     let buttonBack = new Button(150, 100, 200, 100, "Back", function() {
       mgr.showScene(StartScreen);
     });
     this.buttons.push(buttonBack);
+    // Next-Button
     let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", this.nextTask);
     this.buttons.push(buttonNext);
 

@@ -2,6 +2,7 @@ function SettingsScreen() {
   this.buttons = [];
 
   this.setup = function() {
+    // Back-Button
     let buttonBack = new Button(150, 100, 200, 100, "Back", this.backToStart);
     this.buttons.push(buttonBack);
   }
