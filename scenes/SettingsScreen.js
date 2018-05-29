@@ -2,7 +2,11 @@ function SettingsScreen() {
   this.buttons = [];
 
   this.setup = function() {
+    let buttonBack = new Button(150, 100, 200, 100, "Back", this.backToStart);
+    this.buttons.push(buttonBack);
+  }
 
+  this.enter = function() {
     // <input type="file" id="files" name="files[]" multiple />
     this.input = document.createElement('input');
     this.input.type = "file";
@@ -15,11 +19,6 @@ function SettingsScreen() {
 
     // Auf neue Auswahl reagieren und gegebenenfalls Funktion neu ausführen.
     this.input.addEventListener('change', this.fileChange, false);
-
-    let buttonBack = new Button(150, 100, 200, 100, "Back", function() {
-      mgr.showScene(StartScreen);
-    });
-    this.buttons.push(buttonBack);
   }
 
   this.draw = function() {
