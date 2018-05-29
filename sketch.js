@@ -1,8 +1,10 @@
+// Global variables
 var mgr;
 var canvas;
 var scribble;
 var lines = ["Keine Aufgaben eingetragen"];
 
+// Global colors
 var primary = 0;
 var secondary = 51;
 var tertiary = 100;
