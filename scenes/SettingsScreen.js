@@ -8,14 +8,12 @@ function SettingsScreen() {
   }
 
   this.enter = function() {
-    // <input type="file" id="files" name="files[]" multiple />
+    // File-Input
     this.input = document.createElement('input');
     this.input.type = "file";
     this.input.name = "files[]";
-    document.body.appendChild(this.input);
-
-    // Auf neue Auswahl reagieren und gegebenenfalls Funktion neu ausführen.
     this.input.addEventListener('change', this.fileChange, false);
+    document.body.appendChild(this.input);
   }
 
   this.draw = function() {
