@@ -23,7 +23,7 @@ function SettingsScreen() {
 
   this.mousePressed = function() {
     for (var i = 0; i < this.buttons.length; i++) {
-      this.buttons[i].checkClick()
+      this.buttons[i].checkClick();
     }
   }
 }
