@@ -18,10 +18,6 @@ function SettingsScreen() {
 
   this.draw = function() {
 
-    randomSeed(0);
-    scribble.bowing = 0.1;
-    scribble.roughness = 1.5;
-
     background(tertiary);
 
     for (var i = 0; i < this.buttons.length; i++) {

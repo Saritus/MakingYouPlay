@@ -17,6 +17,8 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight - 21);
 
   scribble = new Scribble();
+  scribble.bowing = 0.1;
+  scribble.roughness = 1.5;
 
   mgr = new SceneManager();
 
@@ -28,6 +30,7 @@ function setup() {
 }
 
 function draw() {
+  randomSeed(0);
   mgr.draw();
 }
 
