@@ -10,6 +10,8 @@ function GameScreen() {
       mgr.showScene(SettingsScreen);
     });
     this.buttons.push(buttonNext);
+
+    this.task = new Task();
   }
 
   this.draw = function() {
@@ -24,8 +26,8 @@ function GameScreen() {
       this.buttons[i].show()
     }
 
-    textAlign("center");
-    text("L\u00f6se Aufgabe Nr. 1", 50, height / 2, width - 100, 500);
+    this.task.show();
+
   }
 
   this.mousePressed = function() {
