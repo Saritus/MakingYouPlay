@@ -5,6 +5,9 @@ function SettingsScreen() {
     // Back-Button
     let buttonBack = new Button(150, 100, 200, 100, "Back", this.backToStart);
     this.buttons.push(buttonBack);
+
+    let buttonUpload = new Button(width / 2, height / 2 + 75, windowWidth - 100, windowHeight - 250, "Click or drop for file upload", function() {});
+    this.buttons.push(buttonUpload);
   }
 
   this.enter = function() {
@@ -13,6 +16,14 @@ function SettingsScreen() {
     this.input.type = "file";
     this.input.name = "files[]";
     this.input.addEventListener('change', this.fileChange, false);
+
+    this.input.style.position = "absolute"
+    this.input.style.top = "200px"
+    this.input.style.left = "50px"
+    this.input.style.width = windowWidth - 100
+    this.input.style.height = windowHeight - 250
+    this.input.style.opacity = 0
+
     document.body.appendChild(this.input);
   }
 

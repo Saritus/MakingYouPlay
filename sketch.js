@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight - 21);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   scribble = new Scribble();
   scribble.bowing = 0.1;
