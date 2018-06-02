@@ -38,6 +38,10 @@ function mousePressed() {
   mgr.mousePressed();
 }
 
+function keyPressed() {
+  mgr.keyPressed()
+}
+
 /*
 window.onresize = function() {
   canvas.size(windowWidth, windowHeight);
