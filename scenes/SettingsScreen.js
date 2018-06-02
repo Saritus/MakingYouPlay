@@ -19,6 +19,7 @@ function SettingsScreen() {
     this.input.style.left = "50px"
     this.input.style.width = windowWidth - 100
     this.input.style.height = windowHeight - 250
+    this.input.style.opacity = 0
 
     document.body.appendChild(this.input);
   }
