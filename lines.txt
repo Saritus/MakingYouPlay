@@ -1,6 +1,4 @@
-jhqwfdhjbqbwf
-lasjdnfkjasdfk
-adnbfkjahfkasf
-aljksfashfqhakfa
-kashbfashfkasf
-kjasfojkashfashf
+High chance;10
+Middle chance;2
+Low chance;0,1
+Default chance (should be 1)
