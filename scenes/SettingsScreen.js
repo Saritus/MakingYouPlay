@@ -69,7 +69,7 @@ function SettingsScreen() {
           let line = lines[index];
           if (line.includes(';')) {
             let parts = line.split(';');
-            let chance = parseFloat(parts[1]);
+            let chance = parseFloat(parts[1].replace(',', '.'));
             tasks.push([parts[0], chance]);
             taskCount += chance;
           } else {
