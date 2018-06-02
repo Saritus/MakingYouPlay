@@ -40,4 +40,9 @@ function GameScreen() {
       this.buttons[i].checkClick();
     }
   }
+
+  this.keyPressed = function() {
+    this.nextTask();
+  }
+
 }
