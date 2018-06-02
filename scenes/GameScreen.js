@@ -42,7 +42,7 @@ function GameScreen() {
   }
 
   this.keyPressed = function() {
-    console.log("key pressed");
+    this.nextTask();
   }
 
 }
