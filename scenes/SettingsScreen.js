@@ -6,9 +6,7 @@ function SettingsScreen() {
     let buttonBack = new Button(150, 100, 200, 100, "Back", this.backToStart);
     this.buttons.push(buttonBack);
 
-    let buttonUpload = new Button(width / 2, height / 2 + 75, windowWidth - 100, windowHeight - 250, "Click or drop for file upload", function() {
-      console.log("Click")
-    });
+    let buttonUpload = new Button(width / 2, height / 2 + 75, windowWidth - 100, windowHeight - 250, "Click or drop for file upload", function() {});
     this.buttons.push(buttonUpload);
   }
 
