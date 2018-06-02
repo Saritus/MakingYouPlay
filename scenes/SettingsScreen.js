@@ -62,9 +62,14 @@ function SettingsScreen() {
       var reader = new FileReader();
 
       reader.onload = function(e) {
+        tasks = []
+        taskCount = 0
         lines = reader.result.split('\n');
-        for (var line = 0; line < lines.length; line++) {
-          console.log(lines[line]);
+        for (var index = 0; index < lines.length; index++) {
+          let line = lines[index];
+          console.log(line);
+          tasks.push([line, 1]);
+          taskCount += 1;
         }
         this.backToStart();
       }.bind(this)
