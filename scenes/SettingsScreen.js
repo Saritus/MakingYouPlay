@@ -67,9 +67,15 @@ function SettingsScreen() {
         lines = reader.result.split('\n');
         for (var index = 0; index < lines.length; index++) {
           let line = lines[index];
-          console.log(line);
-          tasks.push([line, 1]);
-          taskCount += 1;
+          if (line.includes(';')) {
+            let parts = line.split(';');
+            let chance = parseFloat(parts[1]);
+            tasks.push([parts[0], chance]);
+            taskCount += chance;
+          } else {
+            tasks.push([line, 1]);
+            taskCount += 1;
+          }
         }
         this.backToStart();
       }.bind(this)
