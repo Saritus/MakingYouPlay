@@ -43,7 +43,7 @@ function GameScreen() {
       }
     }
     if (!text) {
-      text = tasks[tasks.length - 1][1];
+      text = tasks[tasks.length - 1][0];
     }
 
     this.task.message = text;
