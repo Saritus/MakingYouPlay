@@ -35,8 +35,6 @@ function GameScreen() {
     let currentValue = 0;
     let text = undefined;
 
-    console.log(targetValue)
-
     for (var index = 0; index < tasks.length; index++) {
       currentValue += tasks[index][1]
       if (currentValue >= targetValue) {
