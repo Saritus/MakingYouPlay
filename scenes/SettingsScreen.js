@@ -17,12 +17,12 @@ function SettingsScreen() {
     this.input.name = "files[]";
     this.input.addEventListener('change', this.fileChange, false);
 
-    this.input.style.position = "absolute"
-    this.input.style.top = "200px"
-    this.input.style.left = "50px"
-    this.input.style.width = windowWidth - 100
-    this.input.style.height = windowHeight - 250
-    this.input.style.opacity = 0
+    this.input.style.position = "absolute";
+    this.input.style.top = "200px";
+    this.input.style.left = "50px";
+    this.input.style.width = windowWidth - 100;
+    this.input.style.height = windowHeight - 250;
+    this.input.style.opacity = 0;
 
     document.body.appendChild(this.input);
   }
@@ -32,7 +32,7 @@ function SettingsScreen() {
     background(tertiary);
 
     for (var i = 0; i < this.buttons.length; i++) {
-      this.buttons[i].show()
+      this.buttons[i].show();
     }
   }
 

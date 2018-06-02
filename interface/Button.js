@@ -4,7 +4,7 @@ function Button(x, y, w, h, message, func) {
   this.w = w;
   this.h = h;
   this.message = message;
-  this.func = func
+  this.func = func;
 
   this.show = function() {
     this.showRect(primary);
@@ -44,7 +44,7 @@ function Button(x, y, w, h, message, func) {
     stroke(color);
     textSize(50);
     textAlign("center");
-    fill(primary)
+    fill(primary);
     text(this.message, this.x, this.y);
   }
 

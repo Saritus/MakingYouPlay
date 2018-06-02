@@ -24,7 +24,7 @@ function StartScreen() {
     background(tertiary);
 
     for (var i = 0; i < this.buttons.length; i++) {
-      this.buttons[i].show()
+      this.buttons[i].show();
     }
   }
 

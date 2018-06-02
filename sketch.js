@@ -39,7 +39,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  mgr.keyPressed()
+  mgr.keyPressed();
 }
 
 /*
