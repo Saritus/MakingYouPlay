@@ -39,7 +39,6 @@ function GameScreen() {
 
     for (var index = 0; index < tasks.length; index++) {
       currentValue += tasks[index][1]
-      console.log(currentValue);
       if (currentValue >= targetValue) {
         text = tasks[index][0]
         break;
