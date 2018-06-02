@@ -62,8 +62,8 @@ function SettingsScreen() {
       var reader = new FileReader();
 
       reader.onload = function(e) {
-        tasks = []
-        taskCount = 0
+        tasks = [];
+        taskCount = 0;
         lines = reader.result.split('\n');
         for (var index = 0; index < lines.length; index++) {
           let line = lines[index];
