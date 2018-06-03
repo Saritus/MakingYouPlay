@@ -2,7 +2,10 @@
 var mgr;
 var canvas;
 var scribble;
-var lines = ["Keine Aufgaben eingetragen"];
+var tasks = [
+  ["Keine Aufgaben eingetragen", 1]
+];
+var taskCount = 1.;
 
 // Global colors
 var primary = 0;

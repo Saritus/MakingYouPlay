@@ -62,9 +62,20 @@ function SettingsScreen() {
       var reader = new FileReader();
 
       reader.onload = function(e) {
-        lines = reader.result.split('\n');
-        for (var line = 0; line < lines.length; line++) {
-          console.log(lines[line]);
+        tasks = [];
+        taskCount = 0;
+        var lines = reader.result.split('\n');
+        for (var index = 0; index < lines.length; index++) {
+          let line = lines[index];
+          if (line.includes(';')) {
+            let parts = line.split(';');
+            let chance = parseFloat(parts[1].replace(',', '.'));
+            tasks.push([parts[0], chance]);
+            taskCount += chance;
+          } else {
+            tasks.push([line, 1]);
+            taskCount += 1;
+          }
         }
         this.backToStart();
       }.bind(this)

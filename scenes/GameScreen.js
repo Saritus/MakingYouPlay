@@ -31,8 +31,22 @@ function GameScreen() {
   }
 
   this.nextTask = function() {
-    let index = Math.floor((Math.random() * lines.length));
-    this.task.message = lines[index];
+    let targetValue = Math.random() * taskCount;
+    let currentValue = 0;
+    let text = undefined;
+
+    for (var index = 0; index < tasks.length; index++) {
+      currentValue += tasks[index][1];
+      if (currentValue >= targetValue) {
+        text = tasks[index][0];
+        break;
+      }
+    }
+    if (!text) {
+      text = tasks[tasks.length - 1][0];
+    }
+
+    this.task.message = text;
   }.bind(this)
 
   this.mousePressed = function() {
