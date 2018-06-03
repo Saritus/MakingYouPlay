@@ -67,7 +67,9 @@ function SettingsScreen() {
         var lines = reader.result.split('\n');
         for (var index = 0; index < lines.length; index++) {
           let line = lines[index];
-          if (line.includes(';')) {
+          if (line.length < 2) {
+            // Ignore this line
+          } else if (line.includes(';')) {
             let parts = line.split(';');
             let chance = parseFloat(parts[1].replace(',', '.'));
             tasks.push([parts[0], chance]);
