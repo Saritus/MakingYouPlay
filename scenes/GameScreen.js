@@ -45,10 +45,7 @@ function GameScreen() {
       return true;
     }.bind(this)
 
-    let text = undefined;
-
-    while (!isValidText(text)) {
-
+    let selectNewTask = function() {
       let targetValue = Math.random() * taskCount;
       let currentValue = 0;
 
@@ -62,6 +59,13 @@ function GameScreen() {
       if (!text) {
         text = tasks[tasks.length - 1][0];
       }
+      return text;
+    }
+
+    let text = undefined;
+
+    while (!isValidText(text)) {
+      text = selectNewTask();
     }
 
     this.task.message = text;
