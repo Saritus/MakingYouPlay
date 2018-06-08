@@ -31,9 +31,18 @@ function GameScreen() {
   }
 
   this.nextTask = function() {
+
+    let isValidText = function(text) {
+      if (!text) return false;
+      if (!this.task) return true;
+      if (tasks.length == 1) return true;
+      if (this.task.message == text) return false;
+      return true;
+    }.bind(this)
+
     let text = undefined;
 
-    while (!text || this.task.message == text) {
+    while (!isValidText(text)) {
 
       let targetValue = Math.random() * taskCount;
       let currentValue = 0;
