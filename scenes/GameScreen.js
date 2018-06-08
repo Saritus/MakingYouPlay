@@ -31,11 +31,13 @@ function GameScreen() {
   }
 
   this.nextTask = function() {
-    let targetValue = Math.random() * taskCount;
-    let currentValue = 0;
     let text = undefined;
 
-    while (!text) {
+    while (!text || this.task.message == text) {
+
+      let targetValue = Math.random() * taskCount;
+      let currentValue = 0;
+
       for (var index = 0; index < tasks.length; index++) {
         currentValue += tasks[index][1];
         if (currentValue >= targetValue) {
