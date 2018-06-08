@@ -33,10 +33,15 @@ function GameScreen() {
   this.nextTask = function() {
 
     let isValidText = function(text) {
+      // No new task
       if (!text) return false;
+      // No old task
       if (!this.task) return true;
+      // Only one task available
       if (tasks.length == 1) return true;
+      // New task same as old one
       if (this.task.message == text) return false;
+      // Default case
       return true;
     }.bind(this)
 
