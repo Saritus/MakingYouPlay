@@ -35,15 +35,17 @@ function GameScreen() {
     let currentValue = 0;
     let text = undefined;
 
-    for (var index = 0; index < tasks.length; index++) {
-      currentValue += tasks[index][1];
-      if (currentValue >= targetValue) {
-        text = tasks[index][0];
-        break;
+    while (!text) {
+      for (var index = 0; index < tasks.length; index++) {
+        currentValue += tasks[index][1];
+        if (currentValue >= targetValue) {
+          text = tasks[index][0];
+          break;
+        }
       }
-    }
-    if (!text) {
-      text = tasks[tasks.length - 1][0];
+      if (!text) {
+        text = tasks[tasks.length - 1][0];
+      }
     }
 
     this.task.message = text;
