@@ -31,19 +31,41 @@ function GameScreen() {
   }
 
   this.nextTask = function() {
-    let targetValue = Math.random() * taskCount;
-    let currentValue = 0;
+
+    let isValidText = function(text) {
+      // No new task
+      if (!text) return false;
+      // No old task
+      if (!this.task) return true;
+      // Only one task available
+      if (tasks.length == 1) return true;
+      // New task same as old one
+      if (this.task.message == text) return false;
+      // Default case
+      return true;
+    }.bind(this)
+
+    let selectNewTask = function() {
+      let targetValue = Math.random() * taskCount;
+      let currentValue = 0;
+
+      for (var index = 0; index < tasks.length; index++) {
+        currentValue += tasks[index][1];
+        if (currentValue >= targetValue) {
+          text = tasks[index][0];
+          break;
+        }
+      }
+      if (!text) {
+        text = tasks[tasks.length - 1][0];
+      }
+      return text;
+    }
+
     let text = undefined;
 
-    for (var index = 0; index < tasks.length; index++) {
-      currentValue += tasks[index][1];
-      if (currentValue >= targetValue) {
-        text = tasks[index][0];
-        break;
-      }
-    }
-    if (!text) {
-      text = tasks[tasks.length - 1][0];
+    while (!isValidText(text)) {
+      text = selectNewTask();
     }
 
     this.task.message = text;
