@@ -8,7 +8,7 @@ function GameScreen() {
     });
     this.buttons.push(buttonBack);
     // Next-Button
-    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Next task", this.nextTask);
+    let buttonNext = new Button(width / 2, height - 100, width - 100, 100, "Press enter", this.nextTask);
     this.buttons.push(buttonNext);
 
     this.task = new Task(50, 200, width - 100, height - 400);
