@@ -1,6 +1,10 @@
 function GameScreen() {
   this.buttons = [];
-  this.backColor = tertiary;
+  this.backColor = {
+    "h": 200,
+    "s": 40,
+    "l": 80
+  };
 
   this.setup = function() {
     // Back-Button
@@ -21,7 +25,8 @@ function GameScreen() {
 
   this.draw = function() {
 
-    background(this.backColor);
+    colorMode(HSL, 100)
+    background(this.backColor.h, this.backColor.s, this.backColor.l);
 
     for (var i = 0; i < this.buttons.length; i++) {
       this.buttons[i].show();
