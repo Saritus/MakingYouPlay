@@ -3,7 +3,7 @@ var mgr;
 var canvas;
 var scribble;
 var tasks = [
-  ["Keine Aufgaben eingetragen", 1]
+  ["Keine Aufgaben eingetragen", 1, -1]
 ];
 var taskCount = 1.;
 
