@@ -89,6 +89,7 @@ function GameScreen() {
       taskCount -= selectedTask[1]
     }
     this.task.message = selectedTask[0];
+    this.backColor.h = (this.backColor.h + 76) % 100;
   }.bind(this)
 
   this.mousePressed = function() {
