@@ -72,10 +72,11 @@ function SettingsScreen() {
           } else if (line.includes(';')) {
             let parts = line.split(';');
             let chance = parseFloat(parts[1].replace(',', '.'));
-            tasks.push([parts[0], chance]);
+            let occurrences = parts.length > 2 ? parseInt(parts[2]) : -1;
+            tasks.push([parts[0], chance, occurrences]);
             taskCount += chance;
           } else {
-            tasks.push([line, 1]);
+            tasks.push([line, 1, -1]);
             taskCount += 1;
           }
         }

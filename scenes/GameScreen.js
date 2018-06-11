@@ -32,43 +32,57 @@ function GameScreen() {
 
   this.nextTask = function() {
 
-    let isValidText = function(text) {
+    let isValidTask = function(task) {
       // No new task
-      if (!text) return false;
+      if (!task) return false;
       // No old task
       if (!this.task) return true;
       // Only one task available
-      if (tasks.length == 1) return true;
+      if (tasks.length < 2) return true;
       // New task same as old one
-      if (this.task.message == text) return false;
+      if (this.task.message == task[0]) return false;
       // Default case
       return true;
     }.bind(this)
 
     let selectNewTask = function() {
+
+      if (tasks.length == 0) {
+        return ["No tasks left", 1, -1]
+      }
+
+      let selectedIndex = -1;
       let targetValue = Math.random() * taskCount;
       let currentValue = 0;
 
       for (var index = 0; index < tasks.length; index++) {
         currentValue += tasks[index][1];
         if (currentValue >= targetValue) {
-          text = tasks[index][0];
+          selectedIndex = index;
           break;
         }
       }
-      if (!text) {
-        text = tasks[tasks.length - 1][0];
+      if (selectedIndex == -1) {
+        selectedIndex = tasks.length - 1;
       }
-      return text;
+      return tasks[selectedIndex];
     }
 
-    let text = undefined;
+    let selectedTask = undefined;
 
-    while (!isValidText(text)) {
-      text = selectNewTask();
+    while (!isValidTask(selectedTask)) {
+      selectedTask = selectNewTask();
     }
 
-    this.task.message = text;
+    if (selectedTask[2] > -1) {
+      selectedTask[2] -= 1;
+    }
+    if (selectedTask[2] == 0) {
+      let taskIndex = tasks.indexOf(selectedTask);
+      tasks.splice(taskIndex, 1);
+      taskCount -= selectedTask[1]
+    }
+    this.task.message = selectedTask[0];
   }.bind(this)
 
   this.mousePressed = function() {
