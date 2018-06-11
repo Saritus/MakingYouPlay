@@ -1,7 +1,7 @@
 function GameScreen() {
   this.buttons = [];
   this.backColor = {
-    "h": 200,
+    "h": 0,
     "s": 40,
     "l": 80
   };
