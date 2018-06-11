@@ -69,6 +69,14 @@ function GameScreen() {
       selectedTask = selectNewTask();
     }
 
+    if (selectedTask[2] > -1) {
+      selectedTask[2] -= 1;
+    }
+    if (selectedTask[2] == 0) {
+      let taskIndex = tasks.indexOf(selectedTask);
+      tasks.splice(taskIndex, 1);
+      taskCount -= selectedTask[1]
+    }
     this.task.message = selectedTask[0];
   }.bind(this)
 
