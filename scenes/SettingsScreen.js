@@ -76,7 +76,7 @@ function SettingsScreen() {
             tasks.push([parts[0], chance, occurrences]);
             taskCount += chance;
           } else {
-            tasks.push([line, 1]);
+            tasks.push([line, 1, -1]);
             taskCount += 1;
           }
         }
