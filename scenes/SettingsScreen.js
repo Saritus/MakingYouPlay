@@ -29,6 +29,7 @@ function SettingsScreen() {
 
   this.draw = function() {
 
+    colorMode(RGB, 255);
     background(tertiary);
 
     for (var i = 0; i < this.buttons.length; i++) {
