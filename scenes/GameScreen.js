@@ -46,6 +46,11 @@ function GameScreen() {
     }.bind(this)
 
     let selectNewTask = function() {
+
+      if (tasks.length == 0) {
+        return ["No tasks left", 1, -1]
+      }
+
       let selectedIndex = -1;
       let targetValue = Math.random() * taskCount;
       let currentValue = 0;
