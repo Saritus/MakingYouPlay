@@ -2,23 +2,17 @@ function TaskReader() {
   this.read = function(file) {
 
     return new Promise(function(resolve, reject) {
-
       // nur TXT-Dateien
       if (!file.type.match('text/plain')) {
         reject("Files of type '" + file.type + "' are not allowed");
       }
-
       var reader = new FileReader();
-
       reader.onload = function(e) {
-
         // Reset tasks
         tasks = [];
         taskCount = 0;
-
         // Split text based on lines
         var lines = reader.result.split('\n');
-
         // Iterate through all lines
         for (var index = 0; index < lines.length; index++) {
           let line = lines[index];
@@ -35,14 +29,10 @@ function TaskReader() {
             taskCount += 1;
           }
         }
-
         // Resolve promise
         resolve();
-
       }
-
       reader.readAsText(file, 'windows-1252');
-
     });
   }
 }
