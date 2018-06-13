@@ -52,39 +52,17 @@ function SettingsScreen() {
     // FileList object
     var dateien = evt.target.files;
 
+    // Create task reader object
+    var reader = new TaskReader();
+
     // Auslesen der gespeicherten Dateien durch Schleife
     for (var i = 0, f; f = dateien[i]; i++) {
 
-      // nur TXT-Dateien
-      if (!f.type.match('text/plain')) {
-        continue;
-      }
+      reader.read(f).then(
+        resp => this.backToStart(),
+        err => console.error(err)
+      );
 
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        tasks = [];
-        taskCount = 0;
-        var lines = reader.result.split('\n');
-        for (var index = 0; index < lines.length; index++) {
-          let line = lines[index];
-          if (line.length < 2) {
-            // Ignore this line
-          } else if (line.includes(';')) {
-            let parts = line.split(';');
-            let chance = parseFloat(parts[1].replace(',', '.'));
-            let occurrences = parts.length > 2 ? parseInt(parts[2]) : -1;
-            tasks.push([parts[0], chance, occurrences]);
-            taskCount += chance;
-          } else {
-            tasks.push([line, 1, -1]);
-            taskCount += 1;
-          }
-        }
-        this.backToStart();
-      }.bind(this)
-
-      reader.readAsText(f, 'windows-1252');
     }
 
   }.bind(this)
