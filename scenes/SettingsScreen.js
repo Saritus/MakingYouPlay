@@ -53,7 +53,7 @@ function SettingsScreen() {
     var dateien = evt.target.files;
 
     // Create task reader object
-    reader = new TaskReader();
+    var reader = new TaskReader();
 
     // Auslesen der gespeicherten Dateien durch Schleife
     for (var i = 0, f; f = dateien[i]; i++) {
