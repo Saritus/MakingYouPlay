@@ -43,7 +43,7 @@ function Button(x, y, w, h, message, func) {
   this.showText = function(color) {
     stroke(color);
     textSize(50);
-    textAlign("center");
+    textAlign(CENTER, CENTER);
     fill(primary);
     text(this.message, this.x, this.y);
   }
