@@ -48,8 +48,10 @@ function TaskReader() {
 
   this.loadLines = function() {
     json = localStorage.getItem("mypLines");
-    let lines = JSON.parse(json)
-    this.evaluateLines(lines);
+    if (json) {
+      let lines = JSON.parse(json)
+      this.evaluateLines(lines);
+    }
   }
 
 }
