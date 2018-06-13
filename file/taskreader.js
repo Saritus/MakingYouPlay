@@ -1,6 +1,6 @@
 function TaskReader() {
-  this.read = function(file) {
 
+  this.read = function(file) {
     return new Promise(function(resolve, reject) {
       // nur TXT-Dateien
       if (!file.type.match('text/plain')) {
