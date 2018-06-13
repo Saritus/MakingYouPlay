@@ -11,7 +11,8 @@ var secondary = 51;
 var tertiary = 100;
 
 function preload() {
-  // font = loadFont('font/HandScribbleSketchTimes.otf');
+  reader = new TaskReader();
+  reader.loadLines();
 }
 
 function setup() {
