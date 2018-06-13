@@ -84,7 +84,7 @@ function SettingsScreen() {
         this.backToStart();
       }.bind(this)
 
-      reader.readAsText(f);
+      reader.readAsText(f, 'windows-1252');
     }
 
   }.bind(this)

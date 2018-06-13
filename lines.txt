@@ -6,3 +6,5 @@ Middle chance;2
 Low chance;0,1;-1
 
 Default chance (should be 1)
+
+Deutsch: ö ä ü ß ÖÜÄ
