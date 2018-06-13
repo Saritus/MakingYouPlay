@@ -5,7 +5,7 @@ function Task(x, y, w, h) {
   this.h = h;
 
   this.show = function() {
-    textAlign("center");
+    textAlign(CENTER, CENTER);
     text(this.message, this.x, this.y, this.w, this.h);
   }
 
