@@ -5,7 +5,7 @@ function TaskReader() {
 
       // nur TXT-Dateien
       if (!file.type.match('text/plain')) {
-        reject();
+        reject("Files of type '" + file.type + "' are not allowed");
       }
 
       var reader = new FileReader();
