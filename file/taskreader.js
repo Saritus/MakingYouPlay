@@ -39,4 +39,10 @@ function TaskReader() {
       }
     }
   }
+
+  this.storeLines = function(lines) {
+    let json = JSON.stringify(lines);
+    localStorage.setItem("mypLines", json);
+  }
+
 }
