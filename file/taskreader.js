@@ -12,7 +12,7 @@ function TaskReader() {
         tasks = [];
         taskCount = 0;
         // Split text based on lines
-        var lines = reader.result.split('\n');
+        var lines = reader.result.split(/[\r\n]+/);
         this.evaluateLines(lines);
         // Resolve promise
         resolve();
