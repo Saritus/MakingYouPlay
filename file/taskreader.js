@@ -14,6 +14,7 @@ function TaskReader() {
         // Split text based on lines
         var lines = reader.result.split(/[\r\n]+/);
         this.evaluateLines(lines);
+        this.storeLines(lines);
         // Resolve promise
         resolve();
       }.bind(this)
