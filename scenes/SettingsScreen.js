@@ -60,7 +60,7 @@ function SettingsScreen() {
 
       reader.read(f).then(
         resp => this.backToStart(),
-        err => console.error(err);
+        err => console.error(err)
       );
 
     }
